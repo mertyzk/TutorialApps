@@ -12,10 +12,15 @@ class DetailContactViewController: UIViewController {
     @IBOutlet weak var contactNameLabel: UILabel!
     @IBOutlet weak var contactPhonoLabel: UILabel!
     
+    var person:Contacts?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let p = person {
+            contactNameLabel.text = p.contact_ad
+            contactPhonoLabel.text = p.contact_tel
+        }
     }
 
 
