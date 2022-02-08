@@ -15,6 +15,15 @@
 		E2E3F74627B2481300B5E2CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2E3F74427B2481300B5E2CC /* LaunchScreen.storyboard */; };
 		E2E3F74E27B2487F00B5E2CC /* QuizScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3F74D27B2487F00B5E2CC /* QuizScreenViewController.swift */; };
 		E2E3F75027B2488A00B5E2CC /* ResultScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3F74F27B2488A00B5E2CC /* ResultScreenViewController.swift */; };
+		E2E3F75327B2508A00B5E2CC /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E3F75227B2508000B5E2CC /* libsqlite3.tbd */; };
+		E2E3F76027B2509B00B5E2CC /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E3F75527B2509B00B5E2CC /* FMDatabaseAdditions.m */; };
+		E2E3F76127B2509B00B5E2CC /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E3F75627B2509B00B5E2CC /* FMDatabase.m */; };
+		E2E3F76227B2509B00B5E2CC /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E3F75A27B2509B00B5E2CC /* FMResultSet.m */; };
+		E2E3F76327B2509B00B5E2CC /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E3F75C27B2509B00B5E2CC /* FMDatabasePool.m */; };
+		E2E3F76427B2509B00B5E2CC /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E3F75D27B2509B00B5E2CC /* FMDatabaseQueue.m */; };
+		E2E3F76627B250BA00B5E2CC /* bayrakquiz.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = E2E3F76527B250BA00B5E2CC /* bayrakquiz.sqlite */; };
+		E2E3F76827B2513900B5E2CC /* Bayraklar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3F76727B2513900B5E2CC /* Bayraklar.swift */; };
+		E2E3F76A27B2519B00B5E2CC /* BayraklarDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E3F76927B2519B00B5E2CC /* BayraklarDao.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +37,22 @@
 		E2E3F74727B2481300B5E2CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2E3F74D27B2487F00B5E2CC /* QuizScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizScreenViewController.swift; sourceTree = "<group>"; };
 		E2E3F74F27B2488A00B5E2CC /* ResultScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultScreenViewController.swift; sourceTree = "<group>"; };
+		E2E3F75227B2508000B5E2CC /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		E2E3F75427B2509A00B5E2CC /* FlagApplication-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlagApplication-Bridging-Header.h"; sourceTree = "<group>"; };
+		E2E3F75527B2509B00B5E2CC /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		E2E3F75627B2509B00B5E2CC /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		E2E3F75727B2509B00B5E2CC /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		E2E3F75827B2509B00B5E2CC /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		E2E3F75927B2509B00B5E2CC /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		E2E3F75A27B2509B00B5E2CC /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		E2E3F75B27B2509B00B5E2CC /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		E2E3F75C27B2509B00B5E2CC /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		E2E3F75D27B2509B00B5E2CC /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		E2E3F75E27B2509B00B5E2CC /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		E2E3F75F27B2509B00B5E2CC /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		E2E3F76527B250BA00B5E2CC /* bayrakquiz.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = bayrakquiz.sqlite; sourceTree = "<group>"; };
+		E2E3F76727B2513900B5E2CC /* Bayraklar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bayraklar.swift; sourceTree = "<group>"; };
+		E2E3F76927B2519B00B5E2CC /* BayraklarDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayraklarDao.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2E3F75327B2508A00B5E2CC /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +72,7 @@
 			children = (
 				E2E3F73827B2481200B5E2CC /* FlagApplication */,
 				E2E3F73727B2481200B5E2CC /* Products */,
+				E2E3F75127B2508000B5E2CC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +87,7 @@
 		E2E3F73827B2481200B5E2CC /* FlagApplication */ = {
 			isa = PBXGroup;
 			children = (
+				E2E3F76527B250BA00B5E2CC /* bayrakquiz.sqlite */,
 				E2E3F73927B2481200B5E2CC /* AppDelegate.swift */,
 				E2E3F73B27B2481200B5E2CC /* SceneDelegate.swift */,
 				E2E3F73D27B2481200B5E2CC /* ViewController.swift */,
@@ -69,8 +97,30 @@
 				E2E3F74727B2481300B5E2CC /* Info.plist */,
 				E2E3F74D27B2487F00B5E2CC /* QuizScreenViewController.swift */,
 				E2E3F74F27B2488A00B5E2CC /* ResultScreenViewController.swift */,
+				E2E3F75827B2509B00B5E2CC /* FMDatabase.h */,
+				E2E3F75627B2509B00B5E2CC /* FMDatabase.m */,
+				E2E3F75F27B2509B00B5E2CC /* FMDatabaseAdditions.h */,
+				E2E3F75527B2509B00B5E2CC /* FMDatabaseAdditions.m */,
+				E2E3F75B27B2509B00B5E2CC /* FMDatabasePool.h */,
+				E2E3F75C27B2509B00B5E2CC /* FMDatabasePool.m */,
+				E2E3F75927B2509B00B5E2CC /* FMDatabaseQueue.h */,
+				E2E3F75D27B2509B00B5E2CC /* FMDatabaseQueue.m */,
+				E2E3F75E27B2509B00B5E2CC /* FMDB.h */,
+				E2E3F75727B2509B00B5E2CC /* FMResultSet.h */,
+				E2E3F75A27B2509B00B5E2CC /* FMResultSet.m */,
+				E2E3F75427B2509A00B5E2CC /* FlagApplication-Bridging-Header.h */,
+				E2E3F76727B2513900B5E2CC /* Bayraklar.swift */,
+				E2E3F76927B2519B00B5E2CC /* BayraklarDao.swift */,
 			);
 			path = FlagApplication;
+			sourceTree = "<group>";
+		};
+		E2E3F75127B2508000B5E2CC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2E3F75227B2508000B5E2CC /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,6 +155,7 @@
 				TargetAttributes = {
 					E2E3F73527B2481200B5E2CC = {
 						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
 					};
 				};
 			};
@@ -131,6 +182,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2E3F76627B250BA00B5E2CC /* bayrakquiz.sqlite in Resources */,
 				E2E3F74627B2481300B5E2CC /* LaunchScreen.storyboard in Resources */,
 				E2E3F74327B2481300B5E2CC /* Assets.xcassets in Resources */,
 				E2E3F74127B2481200B5E2CC /* Main.storyboard in Resources */,
@@ -147,8 +199,15 @@
 				E2E3F73E27B2481200B5E2CC /* ViewController.swift in Sources */,
 				E2E3F74E27B2487F00B5E2CC /* QuizScreenViewController.swift in Sources */,
 				E2E3F73A27B2481200B5E2CC /* AppDelegate.swift in Sources */,
+				E2E3F76127B2509B00B5E2CC /* FMDatabase.m in Sources */,
+				E2E3F76327B2509B00B5E2CC /* FMDatabasePool.m in Sources */,
+				E2E3F76427B2509B00B5E2CC /* FMDatabaseQueue.m in Sources */,
+				E2E3F76A27B2519B00B5E2CC /* BayraklarDao.swift in Sources */,
 				E2E3F73C27B2481200B5E2CC /* SceneDelegate.swift in Sources */,
 				E2E3F75027B2488A00B5E2CC /* ResultScreenViewController.swift in Sources */,
+				E2E3F76227B2509B00B5E2CC /* FMResultSet.m in Sources */,
+				E2E3F76027B2509B00B5E2CC /* FMDatabaseAdditions.m in Sources */,
+				E2E3F76827B2513900B5E2CC /* Bayraklar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +354,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -312,6 +372,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = myzk.FlagApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "FlagApplication/FlagApplication-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -322,6 +384,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -339,6 +402,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = myzk.FlagApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "FlagApplication/FlagApplication-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
