@@ -13,15 +13,17 @@ class FilmViewController: UIViewController {
     
     var filmlist = [Filmler]()
     
+    var kategori:Kategoriler?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dbCopy()
 
-        let f11 = Filmler(film_id: 1, film_ad: "test", film_yil: 2022, film_resim: "django", kategori: Kategoriler(), yonetmen: Yonetmenler())
-        let f12 = Filmler(film_id: 2, film_ad: "fffff", film_yil: 2005, film_resim: "inception", kategori: Kategoriler(), yonetmen: Yonetmenler())
-        let f13 = Filmler(film_id: 3, film_ad: "cccc", film_yil: 1992, film_resim: "interstellar", kategori: Kategoriler(), yonetmen: Yonetmenler())
-        filmlist.append(f11)
-        filmlist.append(f12)
-        filmlist.append(f13)
+        if let kategori = kategori {
+            navigationItem.title = kategori.kategori_ad
+            filmlist = FilmlerDao().getFilmsByCategoryId(kategori_id: kategori.kategori_id!)
+        }
         
         filmCollectionView.delegate = self
         filmCollectionView.dataSource = self
@@ -35,7 +37,32 @@ class FilmViewController: UIViewController {
         design.minimumLineSpacing = 10 // alt alta arasındaki boşluk
         
         filmCollectionView.collectionViewLayout = design
+        
+
        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let index = sender as? Int
+        let goToVc = segue.destination as! FilmDetayViewController
+        goToVc.film = filmlist[index!]
+    }
+    
+    func dbCopy(){
+        let bundlePath = Bundle.main.path(forResource: "filmler", ofType: ".sqlite")
+        let targetPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        let fileManager = FileManager.default
+        let placeToCopy = URL(fileURLWithPath: targetPath).appendingPathComponent("filmler.sqlite")
+        
+        if fileManager.fileExists(atPath: placeToCopy.path){
+            print("DB mevcut, kopyalama gereksiz.")
+        }else{
+            do {
+                try fileManager.copyItem(atPath: bundlePath!, toPath: placeToCopy.path)
+            } catch{
+                print(error)
+            }
+        }
     }
 }
 

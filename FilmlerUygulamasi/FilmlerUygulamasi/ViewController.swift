@@ -16,18 +16,39 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let k1 = Kategoriler(kategori_id: 1, kategori_ad: "dram")
-        let k2 = Kategoriler(kategori_id: 2, kategori_ad: "aksiyon")
-        let k3 = Kategoriler(kategori_id: 3, kategori_ad: "aşk")
-        kategoriList.append(k1)
-        kategoriList.append(k2)
-        kategoriList.append(k3)
+        dbCopy()
         
         kategoriTableView.delegate = self
         kategoriTableView.dataSource = self
         
+        kategoriList = KategorilerDao().getByAll()
         
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let index = sender as? Int
+        let goToVc = segue.destination as! FilmViewController
+        goToVc.kategori = kategoriList[index!]
+    }
+    
+    
+    func dbCopy(){
+            let bundlePath = Bundle.main.path(forResource: "filmler", ofType: ".sqlite")
+            let targetPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+            let fileManager = FileManager.default
+            let placeToCopy = URL(fileURLWithPath: targetPath).appendingPathComponent("filmler.sqlite")
+            
+            if fileManager.fileExists(atPath: placeToCopy.path){
+                print("DB mevcut, kopyalama gereksiz.")
+            }else{
+                do {
+                    try fileManager.copyItem(atPath: bundlePath!, toPath: placeToCopy.path)
+                } catch{
+                    print(error)
+                }
+            }
+        }
 
 
 }
@@ -43,15 +64,13 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath) as! CategoryCellTableViewCell
         let incomingData = kategoriList[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath) as! CategoryCellTableViewCell
         cell.categoryNameLabel.text = incomingData.kategori_ad
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let incomingData = kategoriList[indexPath.row]
-        print("\(incomingData.kategori_ad!) seçildi")
         self.performSegue(withIdentifier: "toFilm", sender: indexPath.row)
     }
     

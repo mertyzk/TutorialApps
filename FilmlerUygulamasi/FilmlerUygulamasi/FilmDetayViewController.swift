@@ -15,10 +15,20 @@ class FilmDetayViewController: UIViewController {
     @IBOutlet weak var labelFilmKategori: UILabel!
     @IBOutlet weak var labelFilmYonetmen: UILabel!
     
+    var film:Filmler?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let film = film{
+            imageViewFilmResim.image = UIImage(named: film.film_resim!)
+            labelFilmAdi.text = film.film_ad
+            labelFilmYil.text = String(film.film_yil!)
+            labelFilmKategori.text = film.kategori?.kategori_ad
+            labelFilmYonetmen.text = film.yonetmen?.yonetmen_ad
+        }
+
+        
     }
     
 
