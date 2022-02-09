@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E24EE2AA27B3AF9500503EF0 /* Kisiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24EE2A927B3AF9500503EF0 /* Kisiler.swift */; };
+		E24EE2AC27B3AFEA00503EF0 /* KisilerDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24EE2AB27B3AFEA00503EF0 /* KisilerDao.swift */; };
+		E24EE2BC27B3B4C500503EF0 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = E24EE2B127B3B4C500503EF0 /* FMDatabasePool.m */; };
+		E24EE2BD27B3B4C500503EF0 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = E24EE2B327B3B4C500503EF0 /* FMDatabaseQueue.m */; };
+		E24EE2BE27B3B4C500503EF0 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = E24EE2B427B3B4C500503EF0 /* FMResultSet.m */; };
+		E24EE2BF27B3B4C500503EF0 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E24EE2B827B3B4C500503EF0 /* FMDatabaseAdditions.m */; };
+		E24EE2C027B3B4C500503EF0 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = E24EE2BB27B3B4C500503EF0 /* FMDatabase.m */; };
+		E24EE2C227B3B4E600503EF0 /* kisiler.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = E24EE2C127B3B4E600503EF0 /* kisiler.sqlite */; };
 		E27EBA8E27B151A200FA7D46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27EBA8D27B151A200FA7D46 /* AppDelegate.swift */; };
 		E27EBA9027B151A200FA7D46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27EBA8F27B151A200FA7D46 /* SceneDelegate.swift */; };
 		E27EBA9227B151A200FA7D46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27EBA9127B151A200FA7D46 /* ViewController.swift */; };
 		E27EBA9527B151A200FA7D46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E27EBA9327B151A200FA7D46 /* Main.storyboard */; };
-		E27EBA9827B151A200FA7D46 /* ContactsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E27EBA9627B151A200FA7D46 /* ContactsApp.xcdatamodeld */; };
 		E27EBA9A27B151A200FA7D46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E27EBA9927B151A200FA7D46 /* Assets.xcassets */; };
 		E27EBA9D27B151A200FA7D46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E27EBA9B27B151A200FA7D46 /* LaunchScreen.storyboard */; };
 		E27EBAA527B1528A00FA7D46 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27EBAA427B1528A00FA7D46 /* ContactTableViewCell.swift */; };
@@ -21,12 +28,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E24EE2A927B3AF9500503EF0 /* Kisiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kisiler.swift; sourceTree = "<group>"; };
+		E24EE2AB27B3AFEA00503EF0 /* KisilerDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisilerDao.swift; sourceTree = "<group>"; };
+		E24EE2B027B3B4C500503EF0 /* ContactsApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ContactsApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		E24EE2B127B3B4C500503EF0 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		E24EE2B227B3B4C500503EF0 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		E24EE2B327B3B4C500503EF0 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		E24EE2B427B3B4C500503EF0 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		E24EE2B527B3B4C500503EF0 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		E24EE2B627B3B4C500503EF0 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		E24EE2B727B3B4C500503EF0 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		E24EE2B827B3B4C500503EF0 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		E24EE2B927B3B4C500503EF0 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		E24EE2BA27B3B4C500503EF0 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		E24EE2BB27B3B4C500503EF0 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		E24EE2C127B3B4E600503EF0 /* kisiler.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = kisiler.sqlite; sourceTree = "<group>"; };
 		E27EBA8A27B151A200FA7D46 /* ContactsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E27EBA8D27B151A200FA7D46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E27EBA8F27B151A200FA7D46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E27EBA9127B151A200FA7D46 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E27EBA9427B151A200FA7D46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E27EBA9727B151A200FA7D46 /* ContactsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ContactsApp.xcdatamodel; sourceTree = "<group>"; };
 		E27EBA9927B151A200FA7D46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E27EBA9C27B151A200FA7D46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E27EBA9E27B151A200FA7D46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,6 +87,7 @@
 		E27EBA8C27B151A200FA7D46 /* ContactsApp */ = {
 			isa = PBXGroup;
 			children = (
+				E24EE2C127B3B4E600503EF0 /* kisiler.sqlite */,
 				E27EBA8D27B151A200FA7D46 /* AppDelegate.swift */,
 				E27EBA8F27B151A200FA7D46 /* SceneDelegate.swift */,
 				E27EBA9127B151A200FA7D46 /* ViewController.swift */,
@@ -73,11 +95,24 @@
 				E27EBA9927B151A200FA7D46 /* Assets.xcassets */,
 				E27EBA9B27B151A200FA7D46 /* LaunchScreen.storyboard */,
 				E27EBA9E27B151A200FA7D46 /* Info.plist */,
-				E27EBA9627B151A200FA7D46 /* ContactsApp.xcdatamodeld */,
 				E27EBAA427B1528A00FA7D46 /* ContactTableViewCell.swift */,
 				E27EBAA627B1542200FA7D46 /* AddContactViewController.swift */,
 				E27EBAA827B1544300FA7D46 /* UpdateContactViewController.swift */,
 				E27EBAAA27B1546800FA7D46 /* DetailContactViewController.swift */,
+				E24EE2A927B3AF9500503EF0 /* Kisiler.swift */,
+				E24EE2AB27B3AFEA00503EF0 /* KisilerDao.swift */,
+				E24EE2B527B3B4C500503EF0 /* FMDatabase.h */,
+				E24EE2BB27B3B4C500503EF0 /* FMDatabase.m */,
+				E24EE2B227B3B4C500503EF0 /* FMDatabaseAdditions.h */,
+				E24EE2B827B3B4C500503EF0 /* FMDatabaseAdditions.m */,
+				E24EE2B927B3B4C500503EF0 /* FMDatabasePool.h */,
+				E24EE2B127B3B4C500503EF0 /* FMDatabasePool.m */,
+				E24EE2B627B3B4C500503EF0 /* FMDatabaseQueue.h */,
+				E24EE2B327B3B4C500503EF0 /* FMDatabaseQueue.m */,
+				E24EE2BA27B3B4C500503EF0 /* FMDB.h */,
+				E24EE2B727B3B4C500503EF0 /* FMResultSet.h */,
+				E24EE2B427B3B4C500503EF0 /* FMResultSet.m */,
+				E24EE2B027B3B4C500503EF0 /* ContactsApp-Bridging-Header.h */,
 			);
 			path = ContactsApp;
 			sourceTree = "<group>";
@@ -114,6 +149,7 @@
 				TargetAttributes = {
 					E27EBA8927B151A200FA7D46 = {
 						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
 					};
 				};
 			};
@@ -141,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E27EBA9D27B151A200FA7D46 /* LaunchScreen.storyboard in Resources */,
+				E24EE2C227B3B4E600503EF0 /* kisiler.sqlite in Resources */,
 				E27EBA9A27B151A200FA7D46 /* Assets.xcassets in Resources */,
 				E27EBA9527B151A200FA7D46 /* Main.storyboard in Resources */,
 			);
@@ -153,14 +190,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E27EBA9827B151A200FA7D46 /* ContactsApp.xcdatamodeld in Sources */,
 				E27EBAA527B1528A00FA7D46 /* ContactTableViewCell.swift in Sources */,
 				E27EBA9227B151A200FA7D46 /* ViewController.swift in Sources */,
+				E24EE2C027B3B4C500503EF0 /* FMDatabase.m in Sources */,
 				E27EBAA727B1542200FA7D46 /* AddContactViewController.swift in Sources */,
 				E27EBA8E27B151A200FA7D46 /* AppDelegate.swift in Sources */,
+				E24EE2BF27B3B4C500503EF0 /* FMDatabaseAdditions.m in Sources */,
+				E24EE2BD27B3B4C500503EF0 /* FMDatabaseQueue.m in Sources */,
+				E24EE2BE27B3B4C500503EF0 /* FMResultSet.m in Sources */,
+				E24EE2BC27B3B4C500503EF0 /* FMDatabasePool.m in Sources */,
 				E27EBA9027B151A200FA7D46 /* SceneDelegate.swift in Sources */,
+				E24EE2AC27B3AFEA00503EF0 /* KisilerDao.swift in Sources */,
 				E27EBAAB27B1546800FA7D46 /* DetailContactViewController.swift in Sources */,
 				E27EBAA927B1544300FA7D46 /* UpdateContactViewController.swift in Sources */,
+				E24EE2AA27B3AF9500503EF0 /* Kisiler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +350,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -324,6 +368,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = myzk.ContactsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ContactsApp/ContactsApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -334,6 +380,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -351,6 +398,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = myzk.ContactsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ContactsApp/ContactsApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -378,19 +426,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		E27EBA9627B151A200FA7D46 /* ContactsApp.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				E27EBA9727B151A200FA7D46 /* ContactsApp.xcdatamodel */,
-			);
-			currentVersion = E27EBA9727B151A200FA7D46 /* ContactsApp.xcdatamodel */;
-			path = ContactsApp.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = E27EBA8227B151A200FA7D46 /* Project object */;
 }
