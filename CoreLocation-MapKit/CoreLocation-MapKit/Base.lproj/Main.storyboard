@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CoreLocation_MapKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aM5-0A-EoN">
+                                <rect key="frame" x="20" y="44" width="374" height="377"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="377" id="Fbf-mm-BGj"/>
+                                    <constraint firstAttribute="width" constant="374" id="nxO-ei-bOe"/>
+                                </constraints>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Maf-MJ-jX9">
+                                <rect key="frame" x="186" y="689" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mcv-ZV-t1Q">
+                                <rect key="frame" x="186" y="515" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4e-MM-Pg2">
+                                <rect key="frame" x="186" y="600" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Mcv-ZV-t1Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5tf-UO-naa"/>
+                            <constraint firstItem="m4e-MM-Pg2" firstAttribute="top" secondItem="Mcv-ZV-t1Q" secondAttribute="bottom" constant="64" id="8Rp-L9-RbC"/>
+                            <constraint firstItem="aM5-0A-EoN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Kp4-Nj-hdu"/>
+                            <constraint firstItem="aM5-0A-EoN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LSX-u5-EJi"/>
+                            <constraint firstItem="Mcv-ZV-t1Q" firstAttribute="top" secondItem="aM5-0A-EoN" secondAttribute="bottom" constant="94" id="fAu-ID-jr2"/>
+                            <constraint firstItem="Maf-MJ-jX9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="k1A-or-x5F"/>
+                            <constraint firstItem="m4e-MM-Pg2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nB8-Gw-ZJ1"/>
+                            <constraint firstItem="Maf-MJ-jX9" firstAttribute="top" secondItem="m4e-MM-Pg2" secondAttribute="bottom" constant="68" id="yZv-0X-i5s"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="latitudeLabel" destination="Mcv-ZV-t1Q" id="hu5-ki-GmO"/>
+                        <outlet property="longitudeLabel" destination="m4e-MM-Pg2" id="LLM-6J-ZxS"/>
+                        <outlet property="mapView" destination="aM5-0A-EoN" id="fZh-wG-z1w"/>
+                        <outlet property="speedLabel" destination="Maf-MJ-jX9" id="HoZ-2V-GlO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="116.51785714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
