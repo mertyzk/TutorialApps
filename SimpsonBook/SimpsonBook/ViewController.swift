@@ -34,9 +34,11 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let index = sender as? Int
-        let goingVC = segue.destination as! DetailsViewController
-        goingVC.simpson = simpson[index!]
+        if segue.identifier == "toDetailVC" {
+            let index = sender as? Int
+            let goingVC = segue.destination as! DetailsViewController
+            goingVC.simpson = simpson[index!]
+        }
     }
 
 
