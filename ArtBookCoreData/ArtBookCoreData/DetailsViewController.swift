@@ -18,7 +18,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var artistTextField: UITextField!
     @IBOutlet weak var yearTextField: UITextField!
     @IBOutlet weak var saveButtonOutlet: UIButton!
-    
+    let context = appDelegate.persistentContainer.viewContext
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,9 +28,9 @@ class DetailsViewController: UIViewController {
             //saveButtonOutlet.isEnabled = false
             saveButtonOutlet.isHidden = true
             
-            /*let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let context = appDelegate.persistentContainer.viewContext
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Paintings")*/
+            //let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Paintings")
             let idString = chosenPaintingId?.uuidString
             fetchRequest.predicate = NSPredicate(format: "id = %@", idString!)
             fetchRequest.returnsObjectsAsFaults = false
@@ -97,7 +97,7 @@ class DetailsViewController: UIViewController {
         } catch  {
             print(error.localizedDescription)
         }
-        //NotificationCenter.default.post(name: NSNotification.Name("newData"), object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name("newData"), object: nil)
         self.navigationController?.popViewController(animated: true)
     }
     
