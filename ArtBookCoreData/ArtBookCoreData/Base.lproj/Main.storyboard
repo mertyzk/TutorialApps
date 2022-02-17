@@ -40,7 +40,13 @@
                             <constraint firstItem="Fq6-30-Jz5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Zer-ZN-2nX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="vAO-pT-rYm"/>
+                    <navigationItem key="navigationItem" id="vAO-pT-rYm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ft6-1g-Osf">
+                            <connections>
+                                <segue destination="mWB-EH-Vq4" kind="show" id="sXh-40-azV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Fq6-30-Jz5" id="HtT-e8-hT0"/>
                         <segue destination="mWB-EH-Vq4" kind="show" identifier="toDetailsVC" id="a9S-AH-hRc"/>
@@ -136,6 +142,9 @@
             <point key="canvasLocation" x="131.8840579710145" y="116.51785714285714"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="a9S-AH-hRc"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="select" width="264" height="300"/>
         <systemColor name="systemBackgroundColor">

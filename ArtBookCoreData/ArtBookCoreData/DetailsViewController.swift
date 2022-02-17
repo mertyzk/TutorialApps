@@ -10,8 +10,10 @@ import CoreData
 
 class DetailsViewController: UIViewController {
 
-    var chosenPainting = ""
-    var chosenPaintingId:UUID?
+    //var chosenPainting = ""
+    //var chosenPaintingId:UUID?
+    
+    var painter:Paintings?
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
@@ -23,7 +25,17 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         
         
-        if chosenPainting != "" {
+        if let painter = painter {
+            saveButtonOutlet.isHidden = true
+            nameTextField.text = painter.name
+            artistTextField.text = painter.artist
+            yearTextField.text = String(painter.year)
+            imageView.image = UIImage(data: painter.image!)
+        }
+        
+        
+        
+        /*if chosenPainting != "" {
             
             //saveButtonOutlet.isEnabled = false
             saveButtonOutlet.isHidden = true
@@ -63,7 +75,7 @@ class DetailsViewController: UIViewController {
             nameTextField.text = ""
             artistTextField.text = ""
             yearTextField.text = ""
-        }
+        }*/
         
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(gestureRecognizer)
@@ -79,7 +91,7 @@ class DetailsViewController: UIViewController {
         /*let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext // context called and using context*/
     
-        let newPainting = NSEntityDescription.insertNewObject(forEntityName: "Paintings", into: context)
+        /*let newPainting = NSEntityDescription.insertNewObject(forEntityName: "Paintings", into: context)
         
         newPainting.setValue(nameTextField.text!, forKey: "name")
         newPainting.setValue(artistTextField.text!, forKey: "artist")
@@ -96,8 +108,30 @@ class DetailsViewController: UIViewController {
             print("success")
         } catch  {
             print(error.localizedDescription)
+        }*/
+        //NotificationCenter.default.post(name: NSNotification.Name("newData"), object: nil)
+        
+        
+        if let name = nameTextField.text, let artist = artistTextField.text, let year = yearTextField.text, let image = imageView.image{
+            let painter = Paintings(context: context)
+            painter.name = name
+            painter.artist = artist
+            painter.year = year
+            painter.image = UIImage(data: image!)
+            appDelegate.saveContext()
+            
         }
-        NotificationCenter.default.post(name: NSNotification.Name("newData"), object: nil)
+        
+        
+        
+        
+           /* @IBOutlet weak var imageView: UIImageView!
+            @IBOutlet weak var nameTextField: UITextField!
+            @IBOutlet weak var artistTextField: UITextField!
+            @IBOutlet weak var yearTextField: UITextField!
+            @IBOutlet weak var saveButtonOutlet: UIButton!*/
+        
+        
         self.navigationController?.popViewController(animated: true)
     }
     

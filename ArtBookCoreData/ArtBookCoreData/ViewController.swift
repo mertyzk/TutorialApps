@@ -10,23 +10,18 @@ import CoreData
 
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
-//var appDelegate = UIApplication.shared.delegate as! AppDelegate // AppDelegate'e ulaştık.
-//var context = appDelegate.persistentContainer.viewContext
-//var fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Paintings") // fetch (tut getir) -- sonuçlarını alacağımız bir istek
-
-
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    // var painterList = [Paintings]() (Burada image listelemeyeceğimiz için tüm datayı getirmenin bir manası yok. tamamını getirmek istersek bunu kullanırız.
-
     let context = appDelegate.persistentContainer.viewContext
     
-    var nameArray = [String]()
+    var painterList = [Paintings]() // (Burada image listelemeyeceğimiz için tüm datayı getirmenin bir manası yok. tamamını getirmek istersek bunu kullanırız.
+
+    /*var nameArray = [String]()
     var idArray = [UUID]()
     var selectedPaint = ""
-    var selectedPaintingId : UUID?
+    var selectedPaintingId : UUID?*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,26 +29,41 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addButtonClicked))
+        //navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addButtonClicked))
         
-        getData()
+        //getData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //getData()
-        //tableView.reloadData()
-        NotificationCenter.default.addObserver(self, selector: #selector(getData), name: NSNotification.Name(rawValue: "newData"), object: nil)
+        dataRead()
+        tableView.reloadData()
+        //NotificationCenter.default.addObserver(self, selector: #selector(getData), name: NSNotification.Name(rawValue: "newData"), object: nil)
     }
-                                                                                          
-    @objc func addButtonClicked(){
-        selectedPaint = ""
-        performSegue(withIdentifier: "toDetailsVC", sender: nil)
+                 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      
+        let index = sender as? Int // Tıkladığımız satırın index bilgisi int olarak geliyor. veri gönderilecek controllerlara nesneleri ata.
+        if segue.identifier == "toDetailsVC"{
+            let gidilecekVC = segue.destination as! DetailsViewController
+            gidilecekVC.painter = painterList[index!] // kisiler listesinin secilen elemanının bilgilerini karsi tarafa gonderdik.
+        }
+        
+        /* if segue.identifier == "toDetailsVC"{
+            let goToVc = segue.destination as! DetailsViewController
+            goToVc.chosenPainting = selectedPaint
+            goToVc.chosenPaintingId = selectedPaintingId
+        }*/
     }
     
-    @objc func getData() {
+    /*@objc func addButtonClicked(){
+        //selectedPaint = ""
+        performSegue(withIdentifier: "toDetailsVC", sender: indexpa)
+    }*/
+    
+   /* @objc func getData() {
         
-        nameArray.removeAll(keepingCapacity: false)
-        idArray.removeAll(keepingCapacity: false)
+        //nameArray.removeAll(keepingCapacity: false)
+        //idArray.removeAll(keepingCapacity: false)
         
         /*let appDelegate = UIApplication.shared.delegate as! AppDelegate // AppDelegate'e ulaştık.
         let context = appDelegate.persistentContainer.viewContext*/
@@ -83,23 +93,17 @@ class ViewController: UIViewController {
         } catch {
             print("error")
         }
-    }
+    }*/
     
-    /*func dataRead() {
+    func dataRead() {
             do {
                 painterList = try context.fetch(Paintings.fetchRequest())
             } catch {
                 print("Data reading ERROR!")
             }
-    }*/ //bu metod tüm datayı getirir
+    } //bu metod tüm datayı getirir
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toDetailsVC"{
-            let goToVc = segue.destination as! DetailsViewController
-            goToVc.chosenPainting = selectedPaint
-            goToVc.chosenPaintingId = selectedPaintingId
-        }
-    }
+
 }
 
 extension ViewController:UITableViewDelegate,UITableViewDataSource{
@@ -109,24 +113,41 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return nameArray.count
+        return painterList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let incomingData = painterList[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellName", for: indexPath)
-        let incomingData = nameArray[indexPath.row]
-        cell.textLabel?.text = incomingData
+        cell.textLabel?.text = incomingData.name
 
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedPaint = nameArray[indexPath.row]
-        selectedPaintingId = idArray[indexPath.row]
+        //selectedPaint = nameArray[indexPath.row]
+        //selectedPaintingId = idArray[indexPath.row]
         self.performSegue(withIdentifier: "toDetailsVC", sender: indexPath.row)
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+            
+            let silAction = UIContextualAction(style: .destructive, title: "Sil") {  (contextualAction, view, boolValue) in
+                
+                // silme kodları
+                
+                let kisi = self.painterList[indexPath.row] // seçilen satırdaki veriyi aldık. silmek istediğimiz kişiyi aldık.
+                self.context.delete(kisi)
+                appDelegate.saveContext()
+                // ilk sildiğimiz anda arayüz güncellenmedi bunun için
+                self.dataRead()
+                self.tableView.reloadData()
+                // artık silme işlemi olduktan sonra veriler yeniden çekilecek ve arayüz güncellenecek
+            }
+            return UISwipeActionsConfiguration(actions: [silAction])
+        }
+    
+    /*func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             /*let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext*/
@@ -177,7 +198,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
                         
                         
                     }
-                }
+                }*/
     
     
 }
