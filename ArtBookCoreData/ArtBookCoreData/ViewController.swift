@@ -35,13 +35,12 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         
         navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addButtonClicked))
-        //getData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //getData()
-        //tableView.reloadData()
-        NotificationCenter.default.addObserver(self, selector: #selector(getData), name: NSNotification.Name(rawValue: "newData"), object: nil)
+        getData()
+        tableView.reloadData()
+        //NotificationCenter.default.addObserver(self, selector: #selector(getData), name: NSNotification.Name(rawValue: "newData"), object: nil)
     }
                                                                                           
     @objc func addButtonClicked(){
@@ -71,7 +70,6 @@ class ViewController: UIViewController {
                 if let id = result.value(forKey: "id") as? UUID {
                     self.idArray.append(id)
                 }
-                
                 self.tableView.reloadData()
             }
             

@@ -57,9 +57,6 @@ class DetailsViewController: UIViewController {
             } catch  {
                 print(error.localizedDescription)
             }
-            
-            
-            
         }else{
             saveButtonOutlet.isHidden = false
             saveButtonOutlet.isEnabled = false
@@ -68,16 +65,12 @@ class DetailsViewController: UIViewController {
             yearTextField.text = ""
         }
         
-        
-        
-
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(gestureRecognizer)
         
         imageView.isUserInteractionEnabled = true
         let imageTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectImage))
         imageView.addGestureRecognizer(imageTapRecognizer)
-        
         
     }
     
@@ -104,7 +97,7 @@ class DetailsViewController: UIViewController {
         } catch  {
             print(error.localizedDescription)
         }
-        NotificationCenter.default.post(name: NSNotification.Name("newData"), object: nil)
+        //NotificationCenter.default.post(name: NSNotification.Name("newData"), object: nil)
         self.navigationController?.popViewController(animated: true)
     }
     
