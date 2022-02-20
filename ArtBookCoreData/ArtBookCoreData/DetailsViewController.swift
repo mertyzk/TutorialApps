@@ -31,6 +31,7 @@ class DetailsViewController: UIViewController {
             artistTextField.text = painter.artist
             yearTextField.text = String(painter.year)
             imageView.image = UIImage(data: painter.image!)
+            
         }
         
         
@@ -88,10 +89,19 @@ class DetailsViewController: UIViewController {
     
     @IBAction func saveButtonClicked(_ sender: Any) {
         
+        /*let painter = Paintings(context: context)
+        nameTextField.text = "abc"
+        artistTextField.text = "artist"
+        yearTextField.text = String(painter.year)
+        let incomingData = imageView.image!.jpegData(compressionQuality: 0.5)
+        imageView.image = UIImage(data: incomingData!)
+        appDelegate.saveContext()
+        self.navigationController?.popViewController(animated: true)*/
+        
         /*let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext // context called and using context*/
     
-        /*let newPainting = NSEntityDescription.insertNewObject(forEntityName: "Paintings", into: context)
+        let newPainting = NSEntityDescription.insertNewObject(forEntityName: "Paintings", into: context)
         
         newPainting.setValue(nameTextField.text!, forKey: "name")
         newPainting.setValue(artistTextField.text!, forKey: "artist")
@@ -108,30 +118,8 @@ class DetailsViewController: UIViewController {
             print("success")
         } catch  {
             print(error.localizedDescription)
-        }*/
-        //NotificationCenter.default.post(name: NSNotification.Name("newData"), object: nil)
-        
-        
-        if let name = nameTextField.text, let artist = artistTextField.text, let year = yearTextField.text, let image = imageView.image{
-            let painter = Paintings(context: context)
-            painter.name = name
-            painter.artist = artist
-            painter.year = year
-            painter.image = UIImage(data: image!)
-            appDelegate.saveContext()
-            
         }
-        
-        
-        
-        
-           /* @IBOutlet weak var imageView: UIImageView!
-            @IBOutlet weak var nameTextField: UITextField!
-            @IBOutlet weak var artistTextField: UITextField!
-            @IBOutlet weak var yearTextField: UITextField!
-            @IBOutlet weak var saveButtonOutlet: UIButton!*/
-        
-        
+        //NotificationCenter.default.post(name: NSNotification.Name("newData"), object: nil)
         self.navigationController?.popViewController(animated: true)
     }
     
