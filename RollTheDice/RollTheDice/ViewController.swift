@@ -30,6 +30,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+            
+        }
+        
+        
+        
         if let backGround = UIImage(named: "arkaPlan"){
             self.view.backgroundColor = UIColor(patternImage: backGround)
         }
@@ -53,24 +59,31 @@ extension ViewController{
     }
     
     func createDiceValue(){
-        let dice1 = arc4random_uniform(6) + 1
-        let dice2 = arc4random_uniform(6) + 1
         
-        imgDice1.image = UIImage(named: String(dice1))
-        imgDice2.image = UIImage(named: String(dice2))
-        
-        setResult(dice1: Int(dice1), dice2: Int(dice2))
-        
-        if currentSet > maxSet {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2){
+            let dice1 = arc4random_uniform(6) + 1
+            let dice2 = arc4random_uniform(6) + 1
             
-            if gamerScores.firstGamerScore > gamerScores.secondGamerScore {
-                setResultLabel.text = "1ST WON!!"
-            }else{
-                setResultLabel.text = "2ND WON!"
+            self.imgDice1.image = UIImage(named: String(dice1))
+            self.imgDice2.image = UIImage(named: String(dice2))
+            
+            self.setResult(dice1: Int(dice1), dice2: Int(dice2))
+            
+            if self.currentSet > self.maxSet {
+                
+                if self.gamerScores.firstGamerScore > self.gamerScores.secondGamerScore {
+                    self.setResultLabel.text = "1ST WON!!"
+                }else{
+                    self.setResultLabel.text = "2ND WON!"
+                }
+                
             }
-            
         }
-
+        
+        setResultLabel.text = "\(gamerTurn). Creating Dice Value For Gamer"
+        imgDice1.image = UIImage(named: "bilinmeyenZar")
+        imgDice2.image = UIImage(named: "bilinmeyenZar")
+        
     }
     
     func setResult(dice1 : Int, dice2: Int){
